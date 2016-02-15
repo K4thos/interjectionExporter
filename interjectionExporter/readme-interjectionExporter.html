@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Interjection exporter tool</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link href="style/g3icon.ico" rel="icon" type="image/bmp" />
+<link rel="stylesheet" href="style/g3readme.css" type="text/css" />
+</head>
+<body>
+<h1>Interjection exporter tool</h1>
+<div class="section">
+  <p><strong><a href="http://www.gibberlings3.net/">A Gibberlings Three Mod</a></strong> <br />
+    <strong>Author</strong>: <a href="http://gibberlings3.net/forums/index.php?showuser=6804">K4thos</a></p>
+  <p><strong>On the web:</strong> <a href="http://gibberlings3.net/forums/index.php?showforum=196"><strong>discussion forum</strong></a></p>
+  <p><strong>Version 1.0</strong></p>
+</div>
+
+<!-- ================== T a b l e ================== --><a id="table" name="Table of Contents"></a>
+<h2>Table of Contents</h2>
+<div class="section">
+	<ol>
+		<li><a href="#overview">Overview</a></li>
+		<li><a href="#compatibility">Compatibility</a></li>
+		<li><a href="#installation">Installation</a></li>
+		<li><a href="#credits">Credits</a></li>
+		<li><a href="#legalese">Legalese</a></li>
+		<li><a href="#version">Version History</a></li>
+	</ol> 
+</div>
+
+<!-- ================== O v e r v i e w ================== --><a id="overview" name="Overview"></a>
+<h2>Overview</h2>
+<div class="section">
+
+<p>Interjection exporter is a tool written in WeiDU language that can be used by modders to export all interjections in game into HTML file. Finding interjection points or getting grasp on how particular NPC has been written is a lot easier when you can analyze it outside of DLG files, in a sortable table storing all important data (including dialogue file names, original and interjected text, state numbers and response position).</p>
+<p>The tool uses PDIALOG.2DA to get the JOIN dialogue list, so it should also work for any mod that adds new NPCs and/or interjections.</p>
+<p>If you still need to review the original files, you can find decompiled version of dialogues related to interjections in <em>interjectionExporter/d/</em> directory.</p>
+
+</div>
+
+<!-- ================== C o m p a t i b i l i t y ================== --><a id="compatibility" name="compatibility"></a>
+<h2>Compatibility</h2>
+<div class="section">
+<p>The tool works with following IE engine iterations: <acronym title="Baldur's Gate">BG1</acronym>, <acronym title="Baldur's Gate 2">BG2</acronym>, <acronym title="Baldur's Gate: Enhanced Edition">BG:EE</acronym>, <acronym title="Baldur's Gate 2: Enhanced Edition">BG2:EE</acronym>, <acronym title="Icewind Dale: Enhanced Edition">IWD:EE</acronym>.</p>
+
+</div>
+
+<!-- ================== I n s t a l l a t i o n ================== --><a id="installation" name="installation"></a>
+
+<h2>Installation</h2>
+<div class="section">
+
+<h3>Windows</h3>
+
+<p>Interjection exporter tool is packaged and installed with WeiDU and is distributed as a self-extracting archive. The usage is fairly straight-forward, as you can install it like any mod. To install, simply double-click the archive and follow the instructions on screen.</p>
+
+<p>Alternatively, the files can be extracted from the archive using <a href="http://www.rarlab.com/">WinRAR</a> or <a href="http://www.7-zip.org/">7zip</a> and moved to your game folder. Your game folder should then contain a interjectionExporter folder and setup-interjectionExporter.exe. To install, double-click setup-interjectionExporter.exe and follow the instructions on screen.</p>
+
+<p>Please run setup-interjectionExporter.exe in your game folder to reinstall, uninstall, or otherwise change components.</p>
+
+<h3>Mac OS X</h3>
+
+<p>Interjection exporter tool is packaged and installed with WeiDU and is distributed as a compressed archive. Extract the contents of the archive and move them to your game folder. Your game folder should then contain a interjectionExporter folder, setup-interjectionExporter, and setup-interjectionExporter.command. To install, simply double-click <strong>setup-interjectionExporter.command</strong> and follow the instructions on screen.</p>
+
+</div>
+
+<!-- ================== C r e d i t s ================== --><a id="credits" name="credits"></a>
+<h2>Credits</h2>
+<div class="section">
+
+<h3>Kudos (in alphabetical order)</h3>
+
+<ul>
+	<li>Many thanks to Bioware and Black Isle Studios for creating Baldur's Gate series</li>
+	<li>Many thanks to Gibberlings 3 Modding Community for hosting</li>
+	<li>Many thanks to Stuart Langridge for SortTable v2 Javascript library</li>
+	<li>Many thanks to Weimer for creating the WeiDU utility</li>
+	<li>Many thanks to Wisp for the Enhanced Edition WeiDU development</li>
+	<li>Many thanks to you and all the other players who have contributed to the completeness of this modification</li>
+</ul>
+
+</div>
+
+<!-- ================== L e g a l e s e ================== --><a id="legalese" name="legalese"></a>
+<h2>Legalese</h2>
+<div class="section">
+
+<p>2012 - 2014 Hasbro, Inc. All Rights Reserved. Baldur's Gate, Dungeons & Dragons, D&D, the Forgotten Realms, Baldur's Gate, Wizards of the Coast and their logos are trademarks of Wizards of the Coast LLC in the U.S.A. and other countries. Hasbro and its logo are trademarks of Hasbro, Inc.</p>
+
+<p>1998 BioWare Corp. All Rights Reserved. BioWare, the BioWare Infinity Engine and the BioWare logo are trademarks of Bioware Corp. Black Isle Studios and the Black Isle Studios logo are trademarks of Interplay Entertainment Corp.</p>
+
+<p>2012 - 2016 Beamdog. All Rights Reserved.</p>
+
+<p><strong>USE THIS MODIFICATION AT YOUR OWN RISK. This modification is not developed, supported, or endorsed by BioWare Corp., Hasbro, Beamdog.</strong></p>
+
+<p>This is a community modification, created as a hobby for free. You can distribute among your peers as much as you like. My code is open sourced and released under the <a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License version 3</a>. Parts of code not written by myself belongs to respective authors.</p>
+
+<p>This modification is available as an open repository on <a href="https://github.com/K4thos">GitHub</a>, which allows everyone to add new commits. Feel free to suggest improvements and fixes by directly modifying the code on the site. Any help on improving the tool is appreciated.</p>
+
+</div>
+
+<!-- ================== V e r s i o n   H i s t o r y ================== --><a id="version" name="version"></a>
+<h2>Version History</h2>
+<div class="section">
+
+<p><a href="#" onclick="toggle('1.1'); return true;">Expand/Collapse older history</a></p>
+
+<h3><a href="#" onclick="toggle('1.0'); return false;">Version 1.0 (15.02.2016)</a></h3>
+
+<ul class="hidelist" id="1.0">
+	<li>First public release</li>
+</ul>
+
+<script type="text/javascript">
+  <!--
+    function toggle(id) {
+      element = document.getElementById(id);
+      if ( element.style.display == 'none' ) {
+        element.style.display = '';
+        if ( document.all ) {
+          document.getElementById('vhistoryaddress').style.display = 'none'; // IE hack
+        }
+      } else {
+        element.style.display = 'none';
+        if ( document.all ) {
+          document.getElementById('vhistoryaddress').style.display = ''; // IE hack
+        }
+      }
+    }
+
+    elements = document.getElementsByTagName('*');
+    for ( var i = 0; i < elements.length; i++ ) {
+      if ( elements[i].className == 'hidelist' ) {
+        elements[i].style.display = 'none';
+      }
+    }
+	toggle('1.0');
+  //-->
+</script>
+
+</body>
+</html>

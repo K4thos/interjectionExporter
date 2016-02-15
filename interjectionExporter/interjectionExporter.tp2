@@ -1,0 +1,811 @@
+BACKUP ~interjectionExporter/backup~
+AUTHOR ~K4thos (swit)~
+//MODDER
+
+BEGIN ~Interjection exporter~
+//NO_LOG_RECORD
+
+<<<<<<<< .../blank.txt
+>>>>>>>>
+
+<<<<<<<< .../log_short.txt
+%source%.DLG contains:
+%log%
+>>>>>>>>
+
+<<<<<<<< .../position.txt
+%MATCH5%
+>>>>>>>>
+
+<<<<<<<< .../log_full.html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Interjection lister</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link href="style/g3icon.ico" rel="icon" type="image/bmp" />
+<style type="text/css">/*<![CDATA[*/
+<!--
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align: left;
+  color: #000;
+  background-color: #f2f2fc;
+  margin: 35px 50px 35px 50px;
+  padding: 0px;
+}
+img {border : 0;}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 17px;
+  font-weight: bold;
+  color: #0000cd;
+  font-variant: small-caps;
+  position: relative;
+  background-color: #fff;
+  z-index:10;
+}
+h1, h2 {
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 5px;
+  border:1px solid #888;
+  z-index:10;
+}
+h3, h4, h5, h6 {
+  border-left:10px solid #0000cd;
+  padding-left:5px;
+  border-bottom:1px dotted #0000cd;
+}
+h2 {font-size : 16px;}
+h3 {font-size : 15px;}
+h4 {font-size : 14px;}
+h5 {font-size : 13px;}
+h6 {font-size : 12px;}
+p, ul, table {clear:left;}
+a, a:link, a:visited, a:hover, a:active {
+  color: #0012ff;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+}
+a:visited {color : #0000cd;}
+table {
+  width: 100%;
+  padding: 20px;
+}
+td, th {
+  text-align: center;
+  vertical-align: baseline;
+  padding: 5px;
+  border: 1px outset #aaa;
+}
+th {
+  background-color: #0000cd;
+  color: #fff;
+  font-weight: bold;
+}
+hr {
+  display: block; 
+  clear: both; 
+  margin: 0; 
+  visibility: hidden;
+}
+.leftalign, table.leftalign tr th, table.leftalign tr td {text-align: left;}
+.section {
+  position: relative;
+  border: 1px dotted #bbb;
+  background-color: #fff;
+  margin: -30px 0px 30px 0px;
+  padding: 20px 20px 10px 20px;
+}
+.kit_description {
+  position: relative;
+  display: block;
+  background-color: #f0f0f0;
+  border-left: 4px solid #ccc;
+  border-top: 1px dotted #ccc;
+}
+.portrait_thumb {
+  float: left;
+  width: 125px;
+  height: 125px;
+  padding: 5px;
+  text-align: center;
+  overflow: auto;
+}
+a.spoiler, a:link.spoiler, a:active.spoiler, a:visited.spoiler, a:hover.spoiler {
+  color: #ccc;
+  background-color: #ccc;
+  border: 1px dotted #888;
+  text-decoration: none;
+}
+a:hover.spoiler {
+  color: #000;
+  border: 1px dotted #ccc;
+}
+.code {
+  font-family: 'Courier New', Courier, mono; 
+  border: 1px solid #555; 
+  border-left: 10px solid #555; 
+  background-color: #eee;
+  padding: 5px;
+}
+.deprecated {color:#666;}
+.code p {
+  text-align: left;
+  font-size: 100%;
+  text-indent: 0px;
+  margin: 5px 0 10px 0;
+}
+.sortable {
+  background-color:#eee;
+  color:#666666;
+  border-collapse:collapse;
+  border-spacing:0;
+  margin:0px auto;
+}
+.sortable td {
+  color: #333;
+  text-align:justify;
+  padding:10px 5px;
+  border-style:solid;
+  border-width:1px;
+  overflow:hidden;
+  word-break:normal;
+}
+.sortable th {
+  text-align:center;
+  font-weight:normal;
+  padding:10px 5px;
+  border-style:solid;
+  border-width:1px;
+  overflow:hidden;
+  word-break:normal;
+}
+.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+  content: " \25B4\25BE" 
+}
+-->
+<!-- % -->
+</style>
+</head>
+<body>
+
+<table class="sortable">
+ <colgroup>
+   <col style="width: 4%">
+   <col style="width: 4%">
+   <col style="width: 4%">
+   <col style="width: 40%">
+   <col style="width: 4%">
+   <col style="width: 4%">
+   <col style="width: 40%">
+ </colgroup>
+ <tr>
+  <th><acronym title="Source dialogue file name">Dialogue</acronym></th>
+  <th><acronym title="Source dialogue state number">State</acronym></th>
+  <th><acronym title="Source dialogue position number within state">Position</acronym></th>
+  <th><acronym title="Source dialogue text">SAY</acronym></th>
+  <th><acronym title="Extern dialogue file name">Dialogue</acronym></th>
+  <th><acronym title="Extern dialogue state number">State</acronym></th>
+  <th><acronym title="Extern dialogue text">EXTERN</acronym></th>
+ </tr>
+>>>>>>>>
+
+<<<<<<<< .../log_full.txt
+ <tr>
+  <td>%source%</td>
+  <td>%state_src%</td>
+  <td>%position%</td>
+  <td>%string_src%</td>
+  <td>%dlg%</td>
+  <td>%state%</td>
+  <td>%string_dest%</td>
+ </tr>
+>>>>>>>>
+
+<<<<<<<< .../log_full_end.txt
+</table>
+
+<script type="text/javascript">
+<!--
+/*
+  SortTable
+  version 2
+  7th April 2007
+  Stuart Langridge, http://www.kryogenix.org/code/browser/sorttable/
+
+  Instructions:
+  Download this file
+  Add <script src="sorttable.js"></script> to your HTML
+  Add class="sortable" to any table you'd like to make sortable
+  Click on the headers to sort
+
+  Thanks to many, many people for contributions and suggestions.
+  Licenced as X11: http://www.kryogenix.org/code/browser/licence.html
+  This basically means: do what you want with it.
+*/
+
+
+var stIsIE = /*@cc_on!@*/false;
+
+sorttable = {
+  init: function() {
+    // quit if this function has already been called
+    if (arguments.callee.done) return;
+    // flag this function so we don't do the same thing twice
+    arguments.callee.done = true;
+    // kill the timer
+    if (_timer) clearInterval(_timer);
+
+    if (!document.createElement || !document.getElementsByTagName) return;
+
+    sorttable.DATE_RE = /^(\d\d?)[\/\.-](\d\d?)[\/\.-]((\d\d)?\d\d)$/;
+
+    forEach(document.getElementsByTagName('table'), function(table) {
+      if (table.className.search(/\bsortable\b/) != -1) {
+        sorttable.makeSortable(table);
+      }
+    });
+
+  },
+
+  makeSortable: function(table) {
+    if (table.getElementsByTagName('thead').length == 0) {
+      // table doesn't have a tHead. Since it should have, create one and
+      // put the first table row in it.
+      the = document.createElement('thead');
+      the.appendChild(table.rows[0]);
+      table.insertBefore(the,table.firstChild);
+    }
+    // Safari doesn't support table.tHead, sigh
+    if (table.tHead == null) table.tHead = table.getElementsByTagName('thead')[0];
+
+    if (table.tHead.rows.length != 1) return; // can't cope with two header rows
+
+    // Sorttable v1 put rows with a class of "sortbottom" at the bottom (as
+    // "total" rows, for example). This is B&R, since what you're supposed
+    // to do is put them in a tfoot. So, if there are sortbottom rows,
+    // for backwards compatibility, move them to tfoot (creating it if needed).
+    sortbottomrows = [];
+    for (var i=0; i<table.rows.length; i++) {
+      if (table.rows[i].className.search(/\bsortbottom\b/) != -1) {
+        sortbottomrows[sortbottomrows.length] = table.rows[i];
+      }
+    }
+    if (sortbottomrows) {
+      if (table.tFoot == null) {
+        // table doesn't have a tfoot. Create one.
+        tfo = document.createElement('tfoot');
+        table.appendChild(tfo);
+      }
+      for (var i=0; i<sortbottomrows.length; i++) {
+        tfo.appendChild(sortbottomrows[i]);
+      }
+      delete sortbottomrows;
+    }
+
+    // work through each column and calculate its type
+    headrow = table.tHead.rows[0].cells;
+    for (var i=0; i<headrow.length; i++) {
+      // manually override the type with a sorttable_type attribute
+      if (!headrow[i].className.match(/\bsorttable_nosort\b/)) { // skip this col
+        mtch = headrow[i].className.match(/\bsorttable_([a-z0-9]+)\b/);
+        if (mtch) { override = mtch[1]; }
+	      if (mtch && typeof sorttable["sort_"+override] == 'function') {
+	        headrow[i].sorttable_sortfunction = sorttable["sort_"+override];
+	      } else {
+	        headrow[i].sorttable_sortfunction = sorttable.guessType(table,i);
+	      }
+	      // make it clickable to sort
+	      headrow[i].sorttable_columnindex = i;
+	      headrow[i].sorttable_tbody = table.tBodies[0];
+	      dean_addEvent(headrow[i],"click", sorttable.innerSortFunction = function(e) {
+
+          if (this.className.search(/\bsorttable_sorted\b/) != -1) {
+            // if we're already sorted by this column, just
+            // reverse the table, which is quicker
+            sorttable.reverse(this.sorttable_tbody);
+            this.className = this.className.replace('sorttable_sorted',
+                                                    'sorttable_sorted_reverse');
+            this.removeChild(document.getElementById('sorttable_sortfwdind'));
+            sortrevind = document.createElement('span');
+            sortrevind.id = "sorttable_sortrevind";
+            sortrevind.innerHTML = stIsIE ? '&nbsp<font face="webdings">5</font>' : '&nbsp;&#x25B4;';
+            this.appendChild(sortrevind);
+            return;
+          }
+          if (this.className.search(/\bsorttable_sorted_reverse\b/) != -1) {
+            // if we're already sorted by this column in reverse, just
+            // re-reverse the table, which is quicker
+            sorttable.reverse(this.sorttable_tbody);
+            this.className = this.className.replace('sorttable_sorted_reverse',
+                                                    'sorttable_sorted');
+            this.removeChild(document.getElementById('sorttable_sortrevind'));
+            sortfwdind = document.createElement('span');
+            sortfwdind.id = "sorttable_sortfwdind";
+            sortfwdind.innerHTML = stIsIE ? '&nbsp<font face="webdings">6</font>' : '&nbsp;&#x25BE;';
+            this.appendChild(sortfwdind);
+            return;
+          }
+
+          // remove sorttable_sorted classes
+          theadrow = this.parentNode;
+          forEach(theadrow.childNodes, function(cell) {
+            if (cell.nodeType == 1) { // an element
+              cell.className = cell.className.replace('sorttable_sorted_reverse','');
+              cell.className = cell.className.replace('sorttable_sorted','');
+            }
+          });
+          sortfwdind = document.getElementById('sorttable_sortfwdind');
+          if (sortfwdind) { sortfwdind.parentNode.removeChild(sortfwdind); }
+          sortrevind = document.getElementById('sorttable_sortrevind');
+          if (sortrevind) { sortrevind.parentNode.removeChild(sortrevind); }
+
+          this.className += ' sorttable_sorted';
+          sortfwdind = document.createElement('span');
+          sortfwdind.id = "sorttable_sortfwdind";
+          sortfwdind.innerHTML = stIsIE ? '&nbsp<font face="webdings">6</font>' : '&nbsp;&#x25BE;';
+          this.appendChild(sortfwdind);
+
+	        // build an array to sort. This is a Schwartzian transform thing,
+	        // i.e., we "decorate" each row with the actual sort key,
+	        // sort based on the sort keys, and then put the rows back in order
+	        // which is a lot faster because you only do getInnerText once per row
+	        row_array = [];
+	        col = this.sorttable_columnindex;
+	        rows = this.sorttable_tbody.rows;
+	        for (var j=0; j<rows.length; j++) {
+	          row_array[row_array.length] = [sorttable.getInnerText(rows[j].cells[col]), rows[j]];
+	        }
+	        /* If you want a stable sort, uncomment the following line */
+	        //sorttable.shaker_sort(row_array, this.sorttable_sortfunction);
+	        /* and comment out this one */
+	        row_array.sort(this.sorttable_sortfunction);
+
+	        tb = this.sorttable_tbody;
+	        for (var j=0; j<row_array.length; j++) {
+	          tb.appendChild(row_array[j][1]);
+	        }
+
+	        delete row_array;
+	      });
+	    }
+    }
+  },
+
+  guessType: function(table, column) {
+    // guess the type of a column based on its first non-blank row
+    sortfn = sorttable.sort_alpha;
+    for (var i=0; i<table.tBodies[0].rows.length; i++) {
+      text = sorttable.getInnerText(table.tBodies[0].rows[i].cells[column]);
+      if (text != '') {
+        if (text.match(/^-?[Ł$¤]?[\d,.]+%?$/)) {
+          return sorttable.sort_numeric;
+        }
+        // check for a date: dd/mm/yyyy or dd/mm/yy
+        // can have / or . or - as separator
+        // can be mm/dd as well
+        possdate = text.match(sorttable.DATE_RE)
+        if (possdate) {
+          // looks like a date
+          first = parseInt(possdate[1]);
+          second = parseInt(possdate[2]);
+          if (first > 12) {
+            // definitely dd/mm
+            return sorttable.sort_ddmm;
+          } else if (second > 12) {
+            return sorttable.sort_mmdd;
+          } else {
+            // looks like a date, but we can't tell which, so assume
+            // that it's dd/mm (English imperialism!) and keep looking
+            sortfn = sorttable.sort_ddmm;
+          }
+        }
+      }
+    }
+    return sortfn;
+  },
+
+  getInnerText: function(node) {
+    // gets the text we want to use for sorting for a cell.
+    // strips leading and trailing whitespace.
+    // this is *not* a generic getInnerText function; it's special to sorttable.
+    // for example, you can override the cell text with a customkey attribute.
+    // it also gets .value for <input> fields.
+
+    if (!node) return "";
+
+    hasInputs = (typeof node.getElementsByTagName == 'function') &&
+                 node.getElementsByTagName('input').length;
+
+    if (node.getAttribute("sorttable_customkey") != null) {
+      return node.getAttribute("sorttable_customkey");
+    }
+    else if (typeof node.textContent != 'undefined' && !hasInputs) {
+      return node.textContent.replace(/^\s+|\s+$/g, '');
+    }
+    else if (typeof node.innerText != 'undefined' && !hasInputs) {
+      return node.innerText.replace(/^\s+|\s+$/g, '');
+    }
+    else if (typeof node.text != 'undefined' && !hasInputs) {
+      return node.text.replace(/^\s+|\s+$/g, '');
+    }
+    else {
+      switch (node.nodeType) {
+        case 3:
+          if (node.nodeName.toLowerCase() == 'input') {
+            return node.value.replace(/^\s+|\s+$/g, '');
+          }
+        case 4:
+          return node.nodeValue.replace(/^\s+|\s+$/g, '');
+          break;
+        case 1:
+        case 11:
+          var innerText = '';
+          for (var i = 0; i < node.childNodes.length; i++) {
+            innerText += sorttable.getInnerText(node.childNodes[i]);
+          }
+          return innerText.replace(/^\s+|\s+$/g, '');
+          break;
+        default:
+          return '';
+      }
+    }
+  },
+
+  reverse: function(tbody) {
+    // reverse the rows in a tbody
+    newrows = [];
+    for (var i=0; i<tbody.rows.length; i++) {
+      newrows[newrows.length] = tbody.rows[i];
+    }
+    for (var i=newrows.length-1; i>=0; i--) {
+       tbody.appendChild(newrows[i]);
+    }
+    delete newrows;
+  },
+
+  /* sort functions
+     each sort function takes two parameters, a and b
+     you are comparing a[0] and b[0] */
+  sort_numeric: function(a,b) {
+    aa = parseFloat(a[0].replace(/[^0-9.-]/g,''));
+    if (isNaN(aa)) aa = 0;
+    bb = parseFloat(b[0].replace(/[^0-9.-]/g,''));
+    if (isNaN(bb)) bb = 0;
+    return aa-bb;
+  },
+  sort_alpha: function(a,b) {
+    if (a[0].toLowerCase()==b[0].toLowerCase()) return 0;
+    if (a[0].toLowerCase()<b[0].toLowerCase()) return -1;
+    return 1;
+  },
+  sort_ddmm: function(a,b) {
+    mtch = a[0].match(sorttable.DATE_RE);
+    y = mtch[3]; m = mtch[2]; d = mtch[1];
+    if (m.length == 1) m = '0'+m;
+    if (d.length == 1) d = '0'+d;
+    dt1 = y+m+d;
+    mtch = b[0].match(sorttable.DATE_RE);
+    y = mtch[3]; m = mtch[2]; d = mtch[1];
+    if (m.length == 1) m = '0'+m;
+    if (d.length == 1) d = '0'+d;
+    dt2 = y+m+d;
+    if (dt1==dt2) return 0;
+    if (dt1<dt2) return -1;
+    return 1;
+  },
+  sort_mmdd: function(a,b) {
+    mtch = a[0].match(sorttable.DATE_RE);
+    y = mtch[3]; d = mtch[2]; m = mtch[1];
+    if (m.length == 1) m = '0'+m;
+    if (d.length == 1) d = '0'+d;
+    dt1 = y+m+d;
+    mtch = b[0].match(sorttable.DATE_RE);
+    y = mtch[3]; d = mtch[2]; m = mtch[1];
+    if (m.length == 1) m = '0'+m;
+    if (d.length == 1) d = '0'+d;
+    dt2 = y+m+d;
+    if (dt1==dt2) return 0;
+    if (dt1<dt2) return -1;
+    return 1;
+  },
+
+  shaker_sort: function(list, comp_func) {
+    // A stable sort function to allow multi-level sorting of data
+    // see: http://en.wikipedia.org/wiki/Cocktail_sort
+    // thanks to Joseph Nahmias
+    var b = 0;
+    var t = list.length - 1;
+    var swap = true;
+
+    while(swap) {
+        swap = false;
+        for(var i = b; i < t; ++i) {
+            if ( comp_func(list[i], list[i+1]) > 0 ) {
+                var q = list[i]; list[i] = list[i+1]; list[i+1] = q;
+                swap = true;
+            }
+        } // for
+        t--;
+
+        if (!swap) break;
+
+        for(var i = t; i > b; --i) {
+            if ( comp_func(list[i], list[i-1]) < 0 ) {
+                var q = list[i]; list[i] = list[i-1]; list[i-1] = q;
+                swap = true;
+            }
+        } // for
+        b++;
+
+    } // while(swap)
+  }
+}
+
+/* ******************************************************************
+   Supporting functions: bundled here to avoid depending on a library
+   ****************************************************************** */
+
+// Dean Edwards/Matthias Miller/John Resig
+
+/* for Mozilla/Opera9 */
+if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", sorttable.init, false);
+}
+
+/* for Internet Explorer */
+/*@cc_on @*/
+/*@if (@_win32)
+    document.write("<script id=__ie_onload defer src=javascript:void(0)><\/script>");
+    var script = document.getElementById("__ie_onload");
+    script.onreadystatechange = function() {
+        if (this.readyState == "complete") {
+            sorttable.init(); // call the onload handler
+        }
+    };
+/*@end @*/
+
+/* for Safari */
+if (/WebKit/i.test(navigator.userAgent)) { // sniff
+    var _timer = setInterval(function() {
+        if (/loaded|complete/.test(document.readyState)) {
+            sorttable.init(); // call the onload handler
+        }
+    }, 10);
+}
+
+/* for other browsers */
+window.onload = sorttable.init;
+
+// written by Dean Edwards, 2005
+// with input from Tino Zijdel, Matthias Miller, Diego Perini
+
+// http://dean.edwards.name/weblog/2005/10/add-event/
+
+function dean_addEvent(element, type, handler) {
+	if (element.addEventListener) {
+		element.addEventListener(type, handler, false);
+	} else {
+		// assign each event handler a unique ID
+		if (!handler.$$guid) handler.$$guid = dean_addEvent.guid++;
+		// create a hash table of event types for the element
+		if (!element.events) element.events = {};
+		// create a hash table of event handlers for each element/event pair
+		var handlers = element.events[type];
+		if (!handlers) {
+			handlers = element.events[type] = {};
+			// store the existing event handler (if there is one)
+			if (element["on" + type]) {
+				handlers[0] = element["on" + type];
+			}
+		}
+		// store the event handler in the hash table
+		handlers[handler.$$guid] = handler;
+		// assign a global event handler to do all the work
+		element["on" + type] = handleEvent;
+	}
+};
+// a counter used to create unique IDs
+dean_addEvent.guid = 1;
+
+function removeEvent(element, type, handler) {
+	if (element.removeEventListener) {
+		element.removeEventListener(type, handler, false);
+	} else {
+		// delete the event handler from the hash table
+		if (element.events && element.events[type]) {
+			delete element.events[type][handler.$$guid];
+		}
+	}
+};
+
+function handleEvent(event) {
+	var returnValue = true;
+	// grab the event object (IE uses a global event object)
+	event = event || fixEvent(((this.ownerDocument || this.document || this).parentWindow || window).event);
+	// get a reference to the hash table of event handlers
+	var handlers = this.events[event.type];
+	// execute each event handler
+	for (var i in handlers) {
+		this.$$handleEvent = handlers[i];
+		if (this.$$handleEvent(event) === false) {
+			returnValue = false;
+		}
+	}
+	return returnValue;
+};
+
+function fixEvent(event) {
+	// add W3C standard event methods
+	event.preventDefault = fixEvent.preventDefault;
+	event.stopPropagation = fixEvent.stopPropagation;
+	return event;
+};
+fixEvent.preventDefault = function() {
+	this.returnValue = false;
+};
+fixEvent.stopPropagation = function() {
+  this.cancelBubble = true;
+}
+
+// Dean's forEach: http://dean.edwards.name/base/forEach.js
+/*
+	forEach, version 1.0
+	Copyright 2006, Dean Edwards
+	License: http://www.opensource.org/licenses/mit-license.php
+*/
+
+// array-like enumeration
+if (!Array.forEach) { // mozilla already supports this
+	Array.forEach = function(array, block, context) {
+		for (var i = 0; i < array.length; i++) {
+			block.call(context, array[i], i, array);
+		}
+	};
+}
+
+// generic enumeration
+Function.prototype.forEach = function(object, block, context) {
+	for (var key in object) {
+		if (typeof this.prototype[key] == "undefined") {
+			block.call(context, object[key], key, object);
+		}
+	}
+};
+
+// character enumeration
+String.forEach = function(string, block, context) {
+	Array.forEach(string.split(""), function(chr, index) {
+		block.call(context, chr, index, string);
+	});
+};
+
+// globally resolve forEach enumeration
+var forEach = function(object, block, context) {
+	if (object) {
+		var resolve = Object; // default
+		if (object instanceof Function) {
+			// functions have a "length" property
+			resolve = Function;
+		} else if (object.forEach instanceof Function) {
+			// the object implements a custom forEach method so use that
+			object.forEach(block, context);
+			return;
+		} else if (typeof object == "string") {
+			// the object is a string
+			resolve = String;
+		} else if (typeof object.length == "number") {
+			// the object is array-like
+			resolve = Array;
+		}
+		resolve.forEach(object, block, context);
+	}
+};
+//-->
+</script>
+<!-- % -->
+
+</body>
+
+</html>
+>>>>>>>>
+
+MKDIR ~interjectionExporter/d~
+	~interjectionExporter/temp~
+COPY ~setup-interjectionExporter.exe~ ~interjectionExporter/weidu.exe~
+
+COPY_EXISTING - ~PDIALOG.2DA~ ~.../interjectionExporter~
+	COUNT_2DA_ROWS 3 "cntrow"
+	FOR (cnt=1; cnt<"%cntrow%"; cnt=cnt+1) BEGIN
+		READ_2DA_ENTRY cnt 0 3 "dv"
+		READ_2DA_ENTRY cnt 2 3 "join"
+		DEFINE_ASSOCIATIVE_ARRAY NPC_list BEGIN
+			~%join%~ => ~%dv%~
+		END
+	END
+	COUNT_2DA_ROWS 5 "cntrow"
+	FOR (cnt=1; cnt<"%cntrow%"; cnt=cnt+1) BEGIN
+		READ_2DA_ENTRY cnt 0 5 "dv"
+		READ_2DA_ENTRY cnt 2 5 "25join"
+		DEFINE_ASSOCIATIVE_ARRAY NPC_list BEGIN
+			~%25join%~ => ~%dv%~
+		END
+	END
+
+COPY ~.../blank.txt~ ~interjectionExporter/log_short.txt~
+
+COPY_EXISTING_REGEXP + GLOB ~^.+\.dlg$~ ~interjectionExporter/temp~
+	SPRINT source ~%SOURCE_RES%~
+	SPRINT log ~~
+	DECOMPILE_DLG_TO_D
+	PHP_EACH NPC_list AS dlg => dv BEGIN
+		COUNT_REGEXP_INSTANCES "EXTERN ~%dlg%~" num_matches
+		PATCH_IF (num_matches > 0) BEGIN
+			SPRINT log ~%log%- %dlg%:%LNL%~
+			REPLACE_EVALUATE CASE_INSENSITIVE "\(EXTERN ~%dlg%~\) \([0-9]+\)" BEGIN
+				SPRINT match1 ~%MATCH1%~
+				SPRINT match2 ~%MATCH2%~
+				INNER_PATCH_SAVE log ~%log%~ BEGIN
+					REPLACE_TEXTUALLY ~^\(- %dlg%:.*\)$~ ~\1 %match2%~
+				END
+				DEFINE_ASSOCIATIVE_ARRAY DLG_list BEGIN
+					~%dlg%state%match2%dlg%source%~ => ~%source%~
+				END
+			END ~%match1% %match2%~
+		END
+	END
+	PATCH_IF (~%log%~ STRING_EQUAL_CASE ~~ = 0) BEGIN
+		INNER_ACTION BEGIN
+			COPY ~interjectionExporter/log_short.txt~ ~interjectionExporter~
+				APPEND_FILE_EVALUATE ~.../log_short.txt~
+			/*ACTION_IF NOT FILE_EXISTS ~interjectionExporter/d/%source%.d~ BEGIN
+				AT_NOW ~interjectionExporter/weidu.exe "%source%.DLG" --out "interjectionExporter/d"~
+			END
+			ACTION_IF NOT FILE_EXISTS ~interjectionExporter/d/%source%.d~ BEGIN
+				AT_NOW ~interjectionExporter/weidu.exe "%dlg%.DLG" --out "interjectionExporter/d"~
+			END*/
+		END
+	END
+	REPLACE_TEXTUALLY ~%LNL%~ ~newline~
+	REPLACE_TEXTUALLY CASE_SENSITIVE "newline\(IF [~W]\)" "%LNL%\1"
+
+COPY ~.../log_full.html~ ~interjectionExporter~
+
+ACTION_PHP_EACH DLG_list AS var => source BEGIN
+	OUTER_PATCH_SAVE dlg ~%var%~ BEGIN
+		REPLACE_TEXTUALLY ~^\(.*\)state.*$~ ~\1~
+	END
+	OUTER_PATCH_SAVE state ~%var%~ BEGIN
+		REPLACE_TEXTUALLY ~^.*state\([0-9]+\).*$~ ~\1~
+	END
+	COPY + ~interjectionExporter/temp/%source%.DLG~ ~interjectionExporter/temp~
+		SPRINT state_src ~~
+		REPLACE_EVALUATE CASE_SENSITIVE "^\(IF .* THEN BEGIN \)\([0-9]+\)\(.* SAY #\)\([0-9]+\)\(.* EXTERN ~%dlg%~ %state%newline\)" BEGIN
+			SPRINT match1 ~%MATCH1%%MATCH2%%MATCH3%%MATCH4%%MATCH5%~
+			SPRINT state_src ~%MATCH2%~
+			GET_STRREF MATCH4 string_src
+			INNER_ACTION BEGIN
+				COPY - ~.../position.txt~ ~.../position_read.txt~ EVALUATE_BUFFER
+					COUNT_REGEXP_INSTANCES "  IF ~" position
+					SET position = position - 1
+				COPY + ~interjectionExporter/temp/%dlg%.DLG~ ~interjectionExporter/temp~
+					REPLACE_EVALUATE CASE_SENSITIVE "^\(IF .* THEN BEGIN %state%\)\(.* SAY #\)\([0-9]+\)" BEGIN
+						SPRINT match2 ~%MATCH1%%MATCH2%%MATCH3%~
+						GET_STRREF MATCH3 string_dest
+					END ~%match2%~
+				COPY ~interjectionExporter/log_full.html~ ~interjectionExporter~
+					APPEND_FILE_EVALUATE ~.../log_full.txt~
+			END
+		END ~%match1%~
+END
+
+COPY ~interjectionExporter/log_full.html~ ~interjectionExporter~
+	APPEND_FILE ~.../log_full_end.txt~
+
+DELETE + ~interjectionExporter/temp~
+
+AT_EXIT ~VIEW interjectionExporter/log_full.html~
+AT_INTERACTIVE_UNINSTALL ~del interjectionExporter/d/*.d~
