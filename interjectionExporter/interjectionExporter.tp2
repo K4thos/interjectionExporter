@@ -167,29 +167,33 @@ a:hover.spoiler {
   content: " \25B4\25BE" 
 }
 -->
-<!-- % -->
+
 </style>
 </head>
 <body>
+
+<p>This table has been automatically generated with <a href="http://gibberlings3.net/forums/index.php?showtopic=27857">Interjection exporter tool</a>.</p>
 
 <table class="sortable">
  <colgroup>
    <col style="width: 4%">
    <col style="width: 4%">
    <col style="width: 4%">
-   <col style="width: 40%">
+   <col style="width: 38%">
    <col style="width: 4%">
    <col style="width: 4%">
-   <col style="width: 40%">
+   <col style="width: 4%">
+   <col style="width: 38%">
  </colgroup>
  <tr>
   <th><acronym title="Source dialogue file name">Dialogue</acronym></th>
   <th><acronym title="Source dialogue state number">State</acronym></th>
   <th><acronym title="Source dialogue position number within state">Position</acronym></th>
   <th><acronym title="Source dialogue text">SAY</acronym></th>
-  <th><acronym title="Extern dialogue file name">Dialogue</acronym></th>
-  <th><acronym title="Extern dialogue state number">State</acronym></th>
-  <th><acronym title="Extern dialogue text">EXTERN</acronym></th>
+  <th><acronym title="Interjecting NPC Death Variable (script name)">DV</acronym></th>
+  <th><acronym title="Interject dialogue file name">Dialogue</acronym></th>
+  <th><acronym title="Interject dialogue state number">State</acronym></th>
+  <th><acronym title="Interject dialogue text">EXTERN</acronym></th>
  </tr>
 >>>>>>>>
 
@@ -199,6 +203,7 @@ a:hover.spoiler {
   <td>%state_src%</td>
   <td>%position%</td>
   <td>%string_src%</td>
+  <td>%dv%</td>
   <td>%dlg%</td>
   <td>%state%</td>
   <td>%string_dest%</td>
@@ -706,12 +711,13 @@ var forEach = function(object, block, context) {
 };
 //-->
 </script>
-<!-- % -->
 
 </body>
 
 </html>
 >>>>>>>>
+
+//%
 
 MKDIR ~interjectionExporter/d~
 	~interjectionExporter/temp~
@@ -722,16 +728,20 @@ COPY_EXISTING - ~PDIALOG.2DA~ ~.../interjectionExporter~
 	FOR (cnt=1; cnt<"%cntrow%"; cnt=cnt+1) BEGIN
 		READ_2DA_ENTRY cnt 0 3 "dv"
 		READ_2DA_ENTRY cnt 2 3 "join"
-		DEFINE_ASSOCIATIVE_ARRAY NPC_list BEGIN
-			~%join%~ => ~%dv%~
+		PATCH_IF FILE_EXISTS_IN_GAME ~%join%.dlg~ BEGIN
+			DEFINE_ASSOCIATIVE_ARRAY NPC_list BEGIN
+				~%join%~ => ~%dv%~
+			END
 		END
 	END
 	COUNT_2DA_ROWS 5 "cntrow"
 	FOR (cnt=1; cnt<"%cntrow%"; cnt=cnt+1) BEGIN
 		READ_2DA_ENTRY cnt 0 5 "dv"
-		READ_2DA_ENTRY cnt 2 5 "25join"
-		DEFINE_ASSOCIATIVE_ARRAY NPC_list BEGIN
-			~%25join%~ => ~%dv%~
+		READ_2DA_ENTRY cnt 5 5 "25join"
+		PATCH_IF FILE_EXISTS_IN_GAME ~%25join%.dlg~ BEGIN
+			DEFINE_ASSOCIATIVE_ARRAY NPC_list BEGIN
+				~%25join%~ => ~%dv%~
+			END
 		END
 	END
 
@@ -752,7 +762,7 @@ COPY_EXISTING_REGEXP + GLOB ~^.+\.dlg$~ ~interjectionExporter/temp~
 					REPLACE_TEXTUALLY ~^\(- %dlg%:.*\)$~ ~\1 %match2%~
 				END
 				DEFINE_ASSOCIATIVE_ARRAY DLG_list BEGIN
-					~%dlg%state%match2%dlg%source%~ => ~%source%~
+					~%dlg%#state#%match2%#dlg#%source%#dv#%dv%~ => ~%source%~
 				END
 			END ~%match1% %match2%~
 		END
@@ -761,12 +771,12 @@ COPY_EXISTING_REGEXP + GLOB ~^.+\.dlg$~ ~interjectionExporter/temp~
 		INNER_ACTION BEGIN
 			COPY ~interjectionExporter/log_short.txt~ ~interjectionExporter~
 				APPEND_FILE_EVALUATE ~.../log_short.txt~
-			/*ACTION_IF NOT FILE_EXISTS ~interjectionExporter/d/%source%.d~ BEGIN
+			ACTION_IF NOT FILE_EXISTS ~interjectionExporter/d/%source%.d~ BEGIN
 				AT_NOW ~interjectionExporter/weidu.exe "%source%.DLG" --out "interjectionExporter/d"~
 			END
-			ACTION_IF NOT FILE_EXISTS ~interjectionExporter/d/%source%.d~ BEGIN
+			ACTION_IF NOT FILE_EXISTS ~interjectionExporter/d/%dlg%.d~ BEGIN
 				AT_NOW ~interjectionExporter/weidu.exe "%dlg%.DLG" --out "interjectionExporter/d"~
-			END*/
+			END
 		END
 	END
 	REPLACE_TEXTUALLY ~%LNL%~ ~newline~
@@ -776,10 +786,13 @@ COPY ~.../log_full.html~ ~interjectionExporter~
 
 ACTION_PHP_EACH DLG_list AS var => source BEGIN
 	OUTER_PATCH_SAVE dlg ~%var%~ BEGIN
-		REPLACE_TEXTUALLY ~^\(.*\)state.*$~ ~\1~
+		REPLACE_TEXTUALLY ~^\(.*\)#state#.*$~ ~\1~
 	END
 	OUTER_PATCH_SAVE state ~%var%~ BEGIN
-		REPLACE_TEXTUALLY ~^.*state\([0-9]+\).*$~ ~\1~
+		REPLACE_TEXTUALLY ~^.*#state#\([0-9]+\).*$~ ~\1~
+	END
+	OUTER_PATCH_SAVE dv ~%var%~ BEGIN
+		REPLACE_TEXTUALLY ~^.*#dv#~ ~~
 	END
 	COPY + ~interjectionExporter/temp/%source%.DLG~ ~interjectionExporter/temp~
 		SPRINT state_src ~~
