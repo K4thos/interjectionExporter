@@ -189,11 +189,11 @@ a:hover.spoiler {
   <th><acronym title="Source dialogue file name">Dialogue</acronym></th>
   <th><acronym title="Source dialogue state number">State</acronym></th>
   <th><acronym title="Source dialogue position number within state">Pos</acronym></th>
-  <th><acronym title="Source dialogue text">SAY</acronym></th>
+  <th class="sorttable_nosort"><acronym title="Source dialogue text">SAY</acronym></th>
   <th><acronym title="Interjecting NPC Death Variable">DV</acronym></th>
   <th><acronym title="Interject dialogue file name">Dialogue</acronym></th>
   <th><acronym title="Interject dialogue state number">State</acronym></th>
-  <th><acronym title="Interject dialogue text">EXTERN</acronym></th>
+  <th class="sorttable_nosort"><acronym title="Interject dialogue text">EXTERN</acronym></th>
  </tr>
 >>>>>>>>
 
