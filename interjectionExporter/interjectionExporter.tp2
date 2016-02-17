@@ -800,6 +800,11 @@ ACTION_PHP_EACH DLG_list AS var => source BEGIN
 			SPRINT match1 ~%MATCH1%%MATCH2%%MATCH3%%MATCH4%%MATCH5%~
 			SPRINT state_src ~%MATCH2%~
 			GET_STRREF MATCH4 string_src
+			INNER_PATCH_SAVE string_src ~%string_src%~ BEGIN
+				REPLACE_TEXTUALLY ~&~ ~&amp;~
+				REPLACE_TEXTUALLY ~<~ ~&lt;~
+				REPLACE_TEXTUALLY ~>~ ~&gt;~
+			END
 			INNER_ACTION BEGIN
 				COPY - ~.../position.txt~ ~.../position_read.txt~ EVALUATE_BUFFER
 					COUNT_REGEXP_INSTANCES "  IF ~" position
@@ -808,6 +813,11 @@ ACTION_PHP_EACH DLG_list AS var => source BEGIN
 					REPLACE_EVALUATE CASE_SENSITIVE "^\(IF .* THEN BEGIN %state%\)\(.* SAY #\)\([0-9]+\)" BEGIN
 						SPRINT match2 ~%MATCH1%%MATCH2%%MATCH3%~
 						GET_STRREF MATCH3 string_dest
+						INNER_PATCH_SAVE string_dest ~%string_dest%~ BEGIN
+							REPLACE_TEXTUALLY ~&~ ~&amp;~
+							REPLACE_TEXTUALLY ~<~ ~&lt;~
+							REPLACE_TEXTUALLY ~>~ ~&gt;~
+						END
 					END ~%match2%~
 				COPY ~interjectionExporter/log_full.html~ ~interjectionExporter~
 					APPEND_FILE_EVALUATE ~.../log_full.txt~
