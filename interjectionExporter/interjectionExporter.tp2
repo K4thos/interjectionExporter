@@ -176,21 +176,21 @@ a:hover.spoiler {
 
 <table class="sortable">
  <colgroup>
-   <col style="width: 4%">
-   <col style="width: 4%">
-   <col style="width: 4%">
-   <col style="width: 38%">
-   <col style="width: 4%">
-   <col style="width: 4%">
-   <col style="width: 4%">
-   <col style="width: 38%">
+   <col style="width: auto">
+   <col style="width: auto">
+   <col style="width: auto">
+   <col style="width: 50%">
+   <col style="width: auto">
+   <col style="width: auto">
+   <col style="width: auto">
+   <col style="width: 50%">
  </colgroup>
  <tr>
   <th><acronym title="Source dialogue file name">Dialogue</acronym></th>
   <th><acronym title="Source dialogue state number">State</acronym></th>
-  <th><acronym title="Source dialogue position number within state">Position</acronym></th>
+  <th><acronym title="Source dialogue position number within state">Pos</acronym></th>
   <th><acronym title="Source dialogue text">SAY</acronym></th>
-  <th><acronym title="Interjecting NPC Death Variable (script name)">DV</acronym></th>
+  <th><acronym title="Interjecting NPC Death Variable">DV</acronym></th>
   <th><acronym title="Interject dialogue file name">Dialogue</acronym></th>
   <th><acronym title="Interject dialogue state number">State</acronym></th>
   <th><acronym title="Interject dialogue text">EXTERN</acronym></th>
